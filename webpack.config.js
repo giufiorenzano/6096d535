@@ -1,5 +1,6 @@
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
+const path = require('path');
 
 module.exports = {
   module: {
@@ -38,5 +39,10 @@ module.exports = {
     new Dotenv({
       path: `.env.${process.env.NODE_ENV}`,
     }),
-  ]
+  ],
+  resolve: {
+    alias: {
+      '@/aircall': path.resolve(__dirname, 'src'),
+    },
+  },
 };

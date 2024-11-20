@@ -2,30 +2,36 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Header from "./Header.jsx";
-import Navbar from "./Navbar.jsx";
+import Header from "@/aircall/components/Header/index.jsx";
+import Loader from "@/aircall/components/Loader/index.jsx";
+import Navbar from "@/aircall/components/Navbar/index.jsx";
 
-import { routesConfig } from "./routes.js";
+import { LoaderProvider } from "@/aircall/providers/LoaderProvider.jsx";
+
+import { routesConfig } from "@/aircall/routes.js";
 
 const App = () => {
   return (
-    <BrowserRouter>
-      <div className="container">
-        <Header />
-        <Navbar />
-        <main>
-          <Routes>
-            {routesConfig.map((item) => (
-              <Route
-                key={item.id}
-                path={item.path}
-                element={<item.component />}
-              />
-            ))}
-          </Routes>
-        </main>
-      </div>
-    </BrowserRouter>
+    <LoaderProvider>
+      <BrowserRouter>
+        <div className="container flex flex-column">
+          <Header />
+          <Navbar />
+          <main className="p-4 mx-2 mb-2">
+            <Routes>
+              {routesConfig.map((item) => (
+                <Route
+                  key={item.id}
+                  path={item.path}
+                  element={<item.component />}
+                />
+              ))}
+            </Routes>
+          </main>
+          <Loader />
+        </div>
+      </BrowserRouter>
+    </LoaderProvider>
   );
 };
 

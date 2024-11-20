@@ -5,3 +5,50 @@
 .pl-2 {
   padding-left: 8px;
 }
+
+.py-2 {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.px-3 {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.py-4,
+.p-4 {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.px-4,
+.p-4 {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.mb-1 {
+  margin-bottom: 4px;
+}
+
+.mt-2 {
+  margin-top: 8px;
+}
+
+.mb-2 {
+  margin-bottom: 8px;
+}
+
+.mx-2 {
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.mt-4 {
+  margin-top: 16px;
+}
+
+.mb-4 {
+  margin-bottom: 16px;
+}

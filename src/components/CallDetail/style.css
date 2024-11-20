@@ -1,0 +1,47 @@
+.call-detail {
+  margin: 16px 24px;
+  gap: 16px;
+}
+
+.call-detail.missed .header svg path {
+  stroke: rgb(225, 93, 93);
+  fill: rgb(225, 93, 93);
+}
+
+.call-detail.answered .header svg path {
+  stroke: rgb(34, 178, 27);
+  fill: rgb(34, 178, 27);
+}
+
+.call-detail.voicemail .header svg path {
+  stroke: rgb(50, 40, 228);
+  fill: rgb(50, 40, 228);
+}
+
+.header > span {
+  font-size: 18px;
+  color: rgb(48, 48, 48);
+}
+
+.title {
+  margin-left: 16px;
+}
+
+.number {
+  margin-left: 8px;
+  font-weight: 500;
+}
+
+.gap {
+  gap: 8px;
+}
+
+.date > span {
+  font-size: 16px;
+}
+
+.detail {
+  border: 1px solid rgb(238, 238, 238);
+  border-radius: 12px;
+  color: rgb(48, 48, 48);
+}

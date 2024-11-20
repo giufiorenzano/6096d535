@@ -1,15 +1,19 @@
 const baseMethod = (method) => {
-  return async (url, body = {}, headers = {}) => {
+  return async (url, body = {}, json = true) => {
     const options = {
       method,
-      ...headers,
+      headers: {
+        "Content-Type": "application/json",
+      },
     };
 
     if (method === "PATCH" && body) options.body = JSON.stringify(body);
 
     const response = await fetch(url, options);
 
-    return response.json();
+    if(json) return response.json();
+
+    return response.text()
   };
 };
 

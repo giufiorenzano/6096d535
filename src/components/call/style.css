@@ -1,0 +1,28 @@
+.call.missed svg path {
+  stroke: rgb(225, 93, 93);
+  fill: rgb(225, 93, 93);;
+} 
+
+.call.answered svg path {
+  stroke: rgb(34, 178, 27);
+  fill: rgb(34, 178, 27);
+}
+
+.call.voicemail svg path {
+  stroke: rgb(50, 40, 228);
+  fill: rgb(50, 40, 228);
+}
+
+.call {
+  border: 1px solid rgb(238, 238, 238);
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.call > span {
+  color: rgb(93 92 92);
+}
+
+.call > button {
+  width: 100%;
+}

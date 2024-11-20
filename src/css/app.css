@@ -10,8 +10,6 @@
 }
 
 #app .container {
-  display: flex;
-  flex-direction: column;
   width: 376px;
   height: 666px;
   z-index: 100;
@@ -24,8 +22,12 @@
   padding: 20px;
 }
 
-button {
-  all: unset; /* Resets all inherited and default properties */
-  display: inline-block; /* Ensure the button behaves as a block-level element */
-  cursor: pointer; /* Restore the pointer cursor */
+main {
+  flex-grow: 1;
+  background-color: rgb(250, 249, 250);
+  border-radius: 12px;
+
+  top: -10px;
+  position: relative;
+  overflow-y: auto;
 }

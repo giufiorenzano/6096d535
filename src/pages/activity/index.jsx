@@ -1,41 +1,116 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
-import Call from "../../components/call/index.jsx";
-import { useActivitiesHook } from "../../hooks/ActivitiesHook.jsx";
+import ArchiveSvg from "@/aircall/assets/archive.svg";
+import UnarchiveSvg from "@/aircall/assets/unarchive.svg";
 
-import Archive from "../../assets/archive.svg";
+import Call from "@/aircall/components/Call/index.jsx";
 
-import './style.css'
+import { useActivitiesHook } from "@/aircall/hooks/ActivitiesHook.jsx";
+import { useLoader } from "@/aircall/providers/LoaderProvider.jsx";
+
+import "./style.css";
 
 const ActivityFeed = () => {
-  const { activities, getActivities } = useActivitiesHook();
-  const [notArchived, setNotArchived] = useState();
+  const {
+    activities,
+    getActivities,
+    getArchived,
+    groupByDate,
+    reorderByDate,
+    updateActivity,
+    resetActivitiesToInitialState,
+  } = useActivitiesHook();
+  const [callsByDay, setCallsByDay] = useState([]);
+  const [callsByType, setCallsByType] = useState([]);
+  const { startLoading, endLoading } = useLoader();
+
+  const location = useLocation();
+  const archived = location.pathname === "/" ? false : true;
+
+  const toggleStatusChange = async () => {
+    startLoading('toggleStatusChange')
+
+    let promises
+    if (archived) {
+      promises = [resetActivitiesToInitialState()];
+    } else {
+      promises = callsByType.map((call) => {
+         updateActivity(call.id, !archived);
+      });
+    }
+    await Promise.all(promises)
+    
+    setTimeout(() => {
+      getActivities();
+    }, 3000)
+
+    endLoading('toggleStatusChange')
+  };
+
+  const content = () => {
+    if (archived) {
+      return {
+        icon: UnarchiveSvg,
+        text: "Unarchive all calls",
+      };
+    }
+    return {
+      icon: ArchiveSvg,
+      text: "Archive all calls",
+    };
+  };
+
+  const SvgToRender = content().icon;
 
   useEffect(() => {
     getActivities();
   }, []);
 
   useEffect(() => {
-    setNotArchived(activities.filter((call) => !call.is_archived));
-  }, [activities]);
+    if (!activities) return;
 
-  console.log(activities, notArchived);
+    const callsByType = getArchived(archived);
+
+    setCallsByType(callsByType);
+
+    const grouped = groupByDate(callsByType);
+    const reordered = reorderByDate(grouped, "date");
+
+    setCallsByDay(reordered);
+  }, [activities, location]);
 
   return (
     <>
-      <button className="archive-button flex align-center">
-        <Archive />
-        <span className="pl-2">Archive all calls</span>
+      <button
+        className="archive-button flex align-center mb-4 py-2 px-4"
+        onClick={toggleStatusChange}
+        disabled={!callsByDay.length}
+      >
+        <SvgToRender />
+        <span className="pl-2">{content().text}</span>
       </button>
-      {activities && notArchived && (
+      {activities && callsByDay.length ? (
         <>
-          <ul className="flex flex-column">
-            {notArchived.map((act) => (
-              <Call key={act.id} call={act} />
+          <ul>
+            {callsByDay.map((call) => (
+              <li
+                className="activity flex flex-column align-center justify-center mt-4 py-2 px-3"
+                key={call.date}
+              >
+                <span className="date mb-2">{call.date}</span>
+                <ul className="calls flex flex-column">
+                  {call.calls.map((act) => (
+                    <Call key={act.id} call={act} />
+                  ))}
+                </ul>
+              </li>
             ))}
           </ul>
         </>
+      ) : (
+        <span className="not-found">No calls found.</span>
       )}
     </>
   );

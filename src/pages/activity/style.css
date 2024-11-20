@@ -3,9 +3,32 @@
   color: rgb(240, 240, 240);
   font-size: 14px;
   border-radius: 24px;
-  padding: 8px 12px;
 }
 
-svg path {
+.archive-button[disabled] {
+  background-color: rgb(240, 240, 240);
+  color: white;
+  cursor: not-allowed;
+}
+
+.archive-button[disabled] svg path {
+  stroke: white;
+}
+
+.archive-button svg path {
   stroke: rgb(240, 240, 240);
+}
+
+span {
+  font-size: 14px;
+}
+
+.activity .date,
+.not-found {
+  color: rgb(192, 191, 193);
+}
+
+.calls {
+  width: 100%;
+  gap: 8px;
 }

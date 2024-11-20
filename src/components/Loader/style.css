@@ -1,0 +1,35 @@
+.loader.show {
+  display: flex;
+}
+
+.loader.d-none {
+  display: none;
+}
+
+.loader {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.32);
+  width: 376px;
+  height: 666px;
+  z-index: 9999 !important;
+}
+
+.card-loader {
+  height: 90px;
+  width: 90px;
+  background-color: white;
+  border-radius: 16px;
+}
+
+.card-loader > svg {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

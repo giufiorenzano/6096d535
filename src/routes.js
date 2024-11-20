@@ -1,6 +1,5 @@
-import ActivityFeed from "./pages/activity/index.jsx";
-import ArchivedFeed from "./pages/archive/index.jsx";
-import Call from "./pages/call/index.jsx";
+import ActivityFeed from "@/aircall/pages/Activity/index.jsx";
+import Call from "@/aircall/pages/Call/index.jsx";
 
 export const routesConfig = [
   {
@@ -14,7 +13,7 @@ export const routesConfig = [
     id: "archivedpage",
     path: "/archived",
     name: "Archived",
-    component: ArchivedFeed,
+    component: ActivityFeed,
     isNavLink: true,
   },
   {

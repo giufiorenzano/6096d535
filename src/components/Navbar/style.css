@@ -1,0 +1,22 @@
+nav {
+  background-color: rgb(238, 238, 238);
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  padding: 16px 16px 24px;
+  margin: 0px 8px;
+}
+
+ul.navbar {
+  gap: 48px;
+  margin-left: 8px;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(192, 191, 193);
+  font-weight: 500;
+}
+
+a.active {
+  color: rgb(48, 48, 48);
+}
