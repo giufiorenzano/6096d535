@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import CallDetail from "@/aircall/components/CallDetail/index.jsx";
-import { useActivitiesHook } from "@/aircall/hooks/ActivitiesHook.jsx";
+
+import CallDetail from "../../components/CallDetail/index.jsx";
+
+import { useActivitiesHook } from "../../hooks/ActivitiesHook.jsx";
 
 const Call = () => {
   const location = useLocation();

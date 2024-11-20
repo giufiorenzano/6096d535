@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import { useLoader } from "@/aircall/providers/LoaderProvider.jsx";
+import { useLoader } from "../providers/LoaderProvider.jsx";
 
-import request from "@/aircall/services/request";
+import request from "../services/request";
 
-import { formatDate } from "@/aircall/utils/format";
+import { formatDate } from "../utils/format.js";
 
 export const useActivitiesHook = () => {
   const [activities, setActivities] = useState([]);

@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { routesConfig } from "@/aircall/routes";
+import { routesConfig } from "../../routes";
 import './style.css'
 
 const Navbar = () => {

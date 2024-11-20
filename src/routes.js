@@ -1,5 +1,5 @@
-import ActivityFeed from "@/aircall/pages/Activity/index.jsx";
-import Call from "@/aircall/pages/Call/index.jsx";
+import ActivityFeed from "./pages/Activity/index.jsx";
+import Call from "./pages/Call/index.jsx";
 
 export const routesConfig = [
   {

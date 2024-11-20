@@ -1,14 +1,14 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-import ArchiveSvg from "@/aircall/assets/archive.svg";
-import UnarchiveSvg from "@/aircall/assets/unarchive.svg";
+import ArchiveSvg from "../../assets/archive.svg";
+import UnarchiveSvg from "../../assets/unarchive.svg";
 
-import Call from "@/aircall/components/Call/index.jsx";
+import Call from "../../components/Call/index.jsx";
 
-import { useActivitiesHook } from "@/aircall/hooks/ActivitiesHook.jsx";
-import { useLoader } from "@/aircall/providers/LoaderProvider.jsx";
+import { useActivitiesHook } from "../../hooks/ActivitiesHook.jsx";
+
+import { useLoader } from "../../providers/LoaderProvider.jsx";
 
 import "./style.css";
 

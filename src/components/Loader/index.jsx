@@ -1,7 +1,7 @@
 import React from "react"
-import LoaderSvg from '@/aircall/assets/loader.svg'
+import LoaderSvg from '../../assets/loader.svg'
 
-import { useLoader } from "@/aircall/providers/LoaderProvider.jsx";
+import { useLoader } from "../../providers/LoaderProvider.jsx";
 
 import './style.css'
 

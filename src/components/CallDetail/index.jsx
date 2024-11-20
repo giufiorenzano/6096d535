@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 
-import ArrowDown from "@/aircall/assets/arrow-down.svg";
-import ArrowUp from "@/aircall/assets/arrow-up.svg";
+import ArrowDown from "../../assets/arrow-down.svg";
+import ArrowUp from "../../assets/arrow-up.svg";
 
 import {
   formatDate,
   formatPhoneNumber,
   formatTime,
-} from "@/aircall/utils/format.js";
+} from "../../utils/format.js";
 
 import "./style.css";
 

@@ -2,13 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Header from "@/aircall/components/Header/index.jsx";
-import Loader from "@/aircall/components/Loader/index.jsx";
-import Navbar from "@/aircall/components/Navbar/index.jsx";
+import Header from "./components/Header/index.jsx";
+import Loader from "./components/Loader/index.jsx";
+import Navbar from "./components/Navbar/index.jsx";
 
-import { LoaderProvider } from "@/aircall/providers/LoaderProvider.jsx";
+import { LoaderProvider } from "./providers/LoaderProvider.jsx";
 
-import { routesConfig } from "@/aircall/routes.js";
+import { routesConfig } from "./routes.js";
 
 const App = () => {
   return (

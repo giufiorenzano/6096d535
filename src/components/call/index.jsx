@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import ArrowDown from "@/aircall/assets/arrow-down.svg";
-import ArrowUp from "@/aircall/assets/arrow-up.svg";
+import ArrowDown from "../../assets/arrow-down.svg";
+import ArrowUp from "../../assets/arrow-up.svg";
 
-import { formatPhoneNumber, formatTime } from "@/aircall/utils/format";
+import { formatPhoneNumber, formatTime } from "../../utils/format.js";
 
 import "./style.css";
 

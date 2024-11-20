@@ -1,6 +1,6 @@
 import React from 'react';
 
-import AircallSvg from '@/aircall/assets/aircall.svg'
+import AircallSvg from '../../assets/aircall.svg'
 
 import './style.css'
 
