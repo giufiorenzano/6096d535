@@ -1,20 +1,24 @@
-import React from "react"
-import LoaderSvg from '../../assets/loader.svg'
+import React from "react";
+import LoaderSvg from "../../assets/loader.svg";
 
-import { useLoader } from "../../providers/loader.jsx";
+import { useLoader } from "../../providers/LoaderProvider.jsx";
 
-import './style.css'
+import "./style.css";
 
 const Loader = () => {
   const { loading } = useLoader();
 
   return (
-    <div className={`loader flex align-center justify-center ${loading ? 'show' : 'd-none'}`}>
+    <div
+      className={`loader flex align-center justify-center ${
+        loading ? "show" : "d-none"
+      }`}
+    >
       <div className="card-loader flex align-center justify-center">
         <LoaderSvg />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Loader
+export default Loader;

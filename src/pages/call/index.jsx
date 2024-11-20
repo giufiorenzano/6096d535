@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-import CallDetail from "../../components/callDetail/index.jsx";
+import CallDetail from "../../components/CallDetail/index.jsx";
 
 import { useActivitiesHook } from "../../hooks/activities.jsx";
 

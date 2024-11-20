@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { useLoader } from "../providers/loader.jsx";
+import { useLoader } from "../providers/LoaderProvider.jsx";
 
 import request from "../services/request.js";
 

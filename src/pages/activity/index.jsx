@@ -4,11 +4,11 @@ import { useLocation } from "react-router-dom";
 import ArchiveSvg from "../../assets/archive.svg";
 import UnarchiveSvg from "../../assets/unarchive.svg";
 
-import Call from "../../components/call/index.jsx";
+import Call from "../../components/Call/index.jsx";
 
 import { useActivitiesHook } from "../../hooks/activities.jsx";
 
-import { useLoader } from "../../providers/loader.jsx";
+import { useLoader } from "../../providers/LoaderProvider.jsx";
 
 import "./style.css";
 
