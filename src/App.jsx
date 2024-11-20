@@ -2,11 +2,11 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Header from "./components/Header/index.jsx";
-import Loader from "./components/Loader/index.jsx";
-import Navbar from "./components/Navbar/index.jsx";
+import Header from "./components/header/index.jsx";
+import Loader from "./components/loader/index.jsx";
+import Navbar from "./components/navbar/index.jsx";
 
-import { LoaderProvider } from "./providers/LoaderProvider.jsx";
+import { LoaderProvider } from "./providers/loader.jsx";
 
 import { routesConfig } from "./routes.js";
 

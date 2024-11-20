@@ -4,11 +4,11 @@ import { useLocation } from "react-router-dom";
 import ArchiveSvg from "../../assets/archive.svg";
 import UnarchiveSvg from "../../assets/unarchive.svg";
 
-import Call from "../../components/Call/index.jsx";
+import Call from "../../components/call/index.jsx";
 
-import { useActivitiesHook } from "../../hooks/ActivitiesHook.jsx";
+import { useActivitiesHook } from "../../hooks/activities.jsx";
 
-import { useLoader } from "../../providers/LoaderProvider.jsx";
+import { useLoader } from "../../providers/loader.jsx";
 
 import "./style.css";
 
@@ -30,23 +30,23 @@ const ActivityFeed = () => {
   const archived = location.pathname === "/" ? false : true;
 
   const toggleStatusChange = async () => {
-    startLoading('toggleStatusChange')
+    startLoading("toggleStatusChange");
 
-    let promises
+    let promises;
     if (archived) {
       promises = [resetActivitiesToInitialState()];
     } else {
       promises = callsByType.map((call) => {
-         updateActivity(call.id, !archived);
+        updateActivity(call.id, !archived);
       });
     }
-    await Promise.all(promises)
-    
+    await Promise.all(promises);
+
     setTimeout(() => {
       getActivities();
-    }, 3000)
+    }, 3000);
 
-    endLoading('toggleStatusChange')
+    endLoading("toggleStatusChange");
   };
 
   const content = () => {

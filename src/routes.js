@@ -1,5 +1,5 @@
-import ActivityFeed from "./pages/Activity/index.jsx";
-import Call from "./pages/Call/index.jsx";
+import ActivityFeed from "./pages/activity/index.jsx";
+import Call from "./pages/call/index.jsx";
 
 export const routesConfig = [
   {

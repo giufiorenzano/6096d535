@@ -1,7 +1,7 @@
 import React from "react"
 import LoaderSvg from '../../assets/loader.svg'
 
-import { useLoader } from "../../providers/LoaderProvider.jsx";
+import { useLoader } from "../../providers/loader.jsx";
 
 import './style.css'
 
